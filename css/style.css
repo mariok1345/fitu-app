@@ -1,0 +1,62 @@
+.box-principal
+{
+  height: 100vh;
+}
+
+.s-section
+{
+background-color:#006ECD;
+color:white;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size:1.5rem;
+text-align: center;
+}
+
+.box-caption
+{
+background: linear-gradient(135deg, rgba(32,124,229,1) 6%, rgba(32,124,229,1) 41%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 59%);
+justify-content: center;
+align-content: center;
+}
+.app-img
+{
+  width:30%;
+  margin-top:10px;
+}
+
+.header-dashbord
+{
+  height:11.4vh;
+   box-shadow: 5px 10px 18px #F6F6F7;
+  padding: 0;
+}
+.sub-header-dashbord
+{
+  height:11.4vh;
+  background-color:#FCFCFD;
+  border:1px solid #F6F6F7;
+  padding: 0;
+}
+
+
+.main-section
+{
+  padding: 0!important;
+  display: block!important;
+}
+.box-link
+{
+  margin-top:10%;
+}
+.fa-dog
+{
+  color: white;
+}
+.fa-edit
+{
+  margin-right: 5px;
+}
+.links-function
+{
+  margin-left: 10px;
+}
