@@ -1,143 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/fc54a7ee74.js" crossorigin="anonymous"></script>
   <title>FituApp</title>
 </head>
+
 <body>
   <div id="app">
-            <div class="container-fluid ">
-              <div class="row box-principal">
-                <div class="col-2 s-section">
-                  <div class="row box-caption">
-                    <div>
-                      <img src="img/logo-f.png" alt="" class="img-fluid app-img">
-                      <p>Pets</p>
-                    </div>
-                    </div>
-                    <div class="container-fluid box-link">
-                      <div class="row">
-                        <div class="col">
-                        <a href=""><i class="fas fa-dog"><span class="links-function">Pest</span></i></a>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                        <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-dog"><span class="links-function">Add</span></i></a>
-                      </div>
-                        </div>
-                    </div>
+    <!--  menu lateral -->
+    <div class="container-fluid ">
+      <div class="row box-principal">
+        <div class="col-12 col-md-2 s-section">
+          <div class="row box-caption">
+            <div>
+              <img src="img/logo-f.png" alt="" class="img-fluid app-img">
+              <p>Pets</p>
+            </div>
+          </div>
+          <div class="container-fluid box-link">
+            <div class="row">
+              <div class=" col-12">
+                <a href=""><i class="fas fa-dog"><span class="links-function">Pest</span></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-dog"><span class="links-function">Add</span></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} -->
+
+        <!-- Modal  Para agregar masccotas-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-body">
+                <form>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Name</label>
+                    <input type="text" class="form-control" v-model="name" @keyup.enter="crearPest">
                   </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Type</label>
+                    <input type="text" class="form-control" v-model="type" @keyup.enter="crearPest">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Color</label>
+                    <input type="text" class="form-control" v-model="color" @keyup.enter="crearPest">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Breed</label>
+                    <input type="text" class="form-control" v-model="breed" @keyup.enter="crearPest">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Gender</label>
+                    <input type="text" class="form-control" v-model="gender" @keyup.enter="crearPest">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Aged</label>
+                    <input type="text" class="form-control" v-model="aged" @keyup.enter="crearPest">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Created at</label>
+                    <input type="text" class="form-control" v-model="created" @keyup.enter="crearPest">
+                  </div>
+                  <button type="submit" class="btn btn-primary" @click="crearPest">Add</button>
+                </form>
+              </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+            </div>
+          </div>
+        </div>
+        <!-- ............................................................................................ -->
+        <!-- ENCABEZADO DE LA LA APLICACION PRINCIPAL -->
+        <div class="col main-section">
+          <div class="container-fluid">
+            <div class="row ">
+              <div class="col header-dashbord ">
+                <button type="button" class="btn btn-lg btn-primary mt-4 mr-5" disabled>Admin</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col sub-header-dashbord">
 
-      <div class="modal-body">
-        <form>
+              </div>
+            </div>
+          </div>
+        <!-- ........................................................................................... -->
+        <!-- TABLA PARA MOSTRAR DATOS -->
+          <div class="container-fluid">
+            <div class="box-table">
+              <h1>PEST</h1>
+              <table class="table table-striped ">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Created</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(pests, index) in pest">
+                    <th scope="row">{{index}}</th>
+                    <td>{{pests.name}}</td>
+                    <td>{{pests.type}}</td>
+                    <td>{{pests.breed}}</td>
+                    <td>{{pests.gender}}</td>
+                    <td>{{pests.aged}}</td>
+                    <td>{{pests.created}}</td>
+                    <td><a href="" @click="edit(index)" data-toggle="modal" data-target="#exampleModal-2"><i class="far fa-edit"></i></a><a href="" @click="eliminar(index)"><i class="far fa-trash-alt"></i></a></td>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Name</label>
-    <input type="text" class="form-control"  v-model="name" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Tape</label>
-    <input type="text" class="form-control" v-model="type" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Color</label>
-    <input type="text" class="form-control" v-model="color" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Breed</label>
-    <input type="text" class="form-control" v-model="breed" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Gender</label>
-    <input type="text" class="form-control" v-model="gender" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Aged</label>
-    <input type="text" class="form-control" v-model="aged" @keyup.enter="crearPest">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Created at</label>
-    <input type="text" class="form-control" v-model="created" @keyup.enter="crearPest">
-  </div>
-  <button type="submit" class="btn btn-primary" @click="crearPest">Add</button>
-</form>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+          <!-- ............................................................................................. -->
+        </div>
       </div>
 
     </div>
   </div>
-</div>
-                  <div class="col main-section">
-                    <div class="container-fluid">
-                        <div class="row">
-                          <div class="col header-dashbord">
+  <!-- MODAL PARA ACTUALIZAR DATOS -->
+  <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col sub-header-dashbord">
+        <div class="modal-body">
+          <form>
 
-                          </div>
-                        </div>
-                    </div>
-                      <div class="container-fluid">
-                        <h1>PEST</h1>
-                        <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Tape</th>
-      <th scope="col">Color</th>
-      <th scope="col">Breed</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Age</th>
-      <th scope="col">Created at</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="(pests, index) in pest">
-      <th scope="row">1</th>
-      <td>{{pests.name}}</td>
-      <td>{{pests.type}}</td>
-      <td>{{pests.color}}</td>
-      <td>{{pests.breed}}</td>
-      <td>{{pests.gender}}</td>
-      <td>{{pests.aged}}</td>
-      <td>{{pests.created}}</td>
-      <td><a href=""><i class="far fa-edit"></i></a><a href="" @click="eliminar(index)" ><i class="far fa-trash-alt" ></i></a></td>
-
-    </tr>
-
-  </tbody>
-</table>
-                      </div>
-                  </div>
-                </div>
-
-              </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Name</label>
+              <input type="text" class="form-control" v-model="editInput.name">
             </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Type</label>
+              <input type="text" class="form-control" v-model="editInputype">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Color</label>
+              <input type="text" class="form-control" v-model="editInput.color">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Breed</label>
+              <input type="text" class="form-control" v-model="editInput.breed">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Gender</label>
+              <input type="text" class="form-control" v-model="editInput.gender">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Aged</label>
+              <input type="text" class="form-control" v-model="editInput.aged">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Created at</label>
+              <input type="text" class="form-control" v-model="editInput.created">
+            </div>
+            <button type="submit" class="btn btn-primary" @click="update">Update</button>
+          </form>
+        </div>
 
+      </div>
+    </div>
+  </div>
   <!-- Script bootstrap -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- js/vue.js -->
   <!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script type="text/javascript" src="script/app.js">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="script/app.js">
 
-</script>
+  </script>
 </body>
+
 </html>
