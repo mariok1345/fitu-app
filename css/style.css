@@ -65,6 +65,7 @@
 .links-function {
   margin-left: 10px;
 }
+/* diseño movil */
 
 @media(max-width:540px) {
   .sub-header-dashbord {
@@ -90,7 +91,10 @@
     margin-right: auto;
     margin-left: auto;
   }
-
+  .header-dashbord {
+      height: 20.8vh;
+      text-align: end;
+  }
 
 
 }
