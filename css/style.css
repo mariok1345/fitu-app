@@ -1,62 +1,96 @@
-.box-principal
-{
+/* Contendor principal asignado altura */
+.box-principal {
   height: 100vh;
 }
 
-.s-section
-{
-background-color:#006ECD;
-color:white;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-size:1.5rem;
-text-align: center;
+/* Menu lateral */
+.s-section {
+  background-color: #006ECD;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-.box-caption
-{
-background: linear-gradient(135deg, rgba(32,124,229,1) 6%, rgba(32,124,229,1) 41%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 59%);
-justify-content: center;
-align-content: center;
-}
-.app-img
-{
-  width:30%;
-  margin-top:10px;
+/* Section que encierra la marca de fitu app */
+.box-caption {
+  background: linear-gradient(135deg, rgba(32, 124, 229, 1) 6%, rgba(32, 124, 229, 1) 41%, rgba(32, 124, 229, 1) 45%, rgba(73, 155, 234, 1) 59%);
+  justify-content: center;
+  align-content: center;
 }
 
-.header-dashbord
-{
-  height:11.4vh;
-   box-shadow: 5px 10px 18px #F6F6F7;
+/* Estilos a logotipo */
+.app-img {
+  width: 30%;
+  margin-top: 10px;
+}
+
+/* Parte del header principal DONDE contiene el button*/
+.header-dashbord {
+  height: 10.8vh;
+  box-shadow: 5px 10px 18px #F6F6F7;
+  padding: 0;
+  text-align: end;
+}
+
+/* Segundo HEADER DE LA APLICACION */
+.sub-header-dashbord {
+  height: 11.4vh;
+  background-color: #FCFCFD;
+  border: 1px solid #F6F6F7;
   padding: 0;
 }
-.sub-header-dashbord
-{
-  height:11.4vh;
-  background-color:#FCFCFD;
-  border:1px solid #F6F6F7;
-  padding: 0;
+
+/* Section principal donde contiene la tabla para ingresar los datos*/
+.main-section {
+  padding: 0 !important;
+  display: block !important;
 }
 
+/* Section donde contiene los link principales */
+.box-link {
+  margin-top: 10%;
+}
 
-.main-section
-{
-  padding: 0!important;
-  display: block!important;
-}
-.box-link
-{
-  margin-top:10%;
-}
-.fa-dog
-{
+/* Iconos */
+.fa-dog {
   color: white;
 }
-.fa-edit
-{
+
+.fa-edit {
   margin-right: 5px;
 }
-.links-function
-{
+
+/* Iconos de editar y eliminar */
+.links-function {
   margin-left: 10px;
+}
+
+@media(max-width:540px) {
+  .sub-header-dashbord {
+    display: none;
+}
+  h1{
+    text-align: center;
+  }
+  table{
+  font-size: 8px;
+  }
+  .table th {
+    padding: .45rem;
+  }
+  .table td {
+    padding: .1rem;
+
+}
+  .box-table{
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+
 }
